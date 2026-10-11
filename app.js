@@ -8,7 +8,8 @@ import {
   applySale,
   soldOut,
   searchProducts,
-averagePrice
+averagePrice,
+restock
 } from "./lib/reports.js";
 
 const cart = [
@@ -35,4 +36,8 @@ console.log(
   "Search for chair:",
   JSON.stringify(searchProducts(products, "chair").map(({ name }) => name))
 );
-console.log("Average price:", averagePrice(products));
+console.log("Average price:", averagePrice(products));const restocked = restock(products, 2, 5);
+console.log(
+  "Restocked item:",
+  JSON.stringify(restocked.find(product => product.id === 2))
+);
