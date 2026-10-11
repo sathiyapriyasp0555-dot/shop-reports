@@ -7,7 +7,8 @@ import {
   cartTotal,
   applySale,
   soldOut,
-  searchProducts
+  searchProducts,
+averagePrice
 } from "./lib/reports.js";
 
 const cart = [
@@ -34,3 +35,4 @@ console.log(
   "Search for chair:",
   JSON.stringify(searchProducts(products, "chair").map(({ name }) => name))
 );
+console.log("Average price:", averagePrice(products));
