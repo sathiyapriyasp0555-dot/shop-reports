@@ -6,7 +6,8 @@ import {
   valueByCategory,
   cartTotal,
   applySale,
-  soldOut
+  soldOut,
+  searchProducts
 } from "./lib/reports.js";
 
 const cart = [
@@ -27,4 +28,9 @@ console.log(
   "Sale total:",
   sale.reduce((total, product) => total + product.price, 0)
 );
+
 console.log("Sold out:", JSON.stringify(soldOut(products)));
+console.log(
+  "Search for chair:",
+  JSON.stringify(searchProducts(products, "chair").map(({ name }) => name))
+);
